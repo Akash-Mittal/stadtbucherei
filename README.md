@@ -90,5 +90,5 @@ This project involves creating a Java web application using Java 17+ and Gradle,
 * [Postgres in Docker](https://hub.docker.com/_/postgres) 
 
 ### Swagger UI
-http://localhost:8080/swagger-ui/index.html#/
+http://localhost:9090/swagger-ui/index.html#/
 
