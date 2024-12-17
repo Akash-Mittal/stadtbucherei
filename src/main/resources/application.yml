@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?user=postgres&password=admin
+    url: jdbc:postgresql://localhost:5432/postgres?user=sa&password=
     platform: postgres
     initialization-mode: always
     #schema: classpath:script/sql/schema.sql
