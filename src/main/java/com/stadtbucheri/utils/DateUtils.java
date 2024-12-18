@@ -1,5 +1,6 @@
-package com.stadtbucheri;
+package com.stadtbucheri.utils;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -10,6 +11,14 @@ public class DateUtils {
 
 	public static String convertLocalDateToString(LocalDate date) {
 		return date != null ? date.format(FORMATTER) : null;
+	}
+
+	public static String convertDateToString(Date date) {
+		if (date == null) {
+			return null;
+		}
+		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy"); // Use desired format
+		return formatter.format(date);
 	}
 
 	public static Date convertStringToDate(String dateStr) {

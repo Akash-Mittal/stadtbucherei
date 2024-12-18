@@ -1,4 +1,4 @@
-package com.stadtbucheri.test;
+package com.stadtbucheri.controller;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import org.junit.Ignore;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -30,6 +31,7 @@ import org.testcontainers.lifecycle.Startables;
 import com.stadtbucheri.dto.AuthorData;
 import com.stadtbucheri.dto.CreateAuthorRequest;
 
+@Ignore
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)

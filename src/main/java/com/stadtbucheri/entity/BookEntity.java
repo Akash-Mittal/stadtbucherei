@@ -15,7 +15,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "book", uniqueConstraints = @UniqueConstraint(columnNames = { "title", "genre", "price" }))
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "title", "genre", "price" }))
 
 public class BookEntity {
 

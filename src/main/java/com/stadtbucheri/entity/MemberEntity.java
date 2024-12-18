@@ -11,7 +11,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "member")
+@Table
 @Data
 @NoArgsConstructor
 public class MemberEntity {

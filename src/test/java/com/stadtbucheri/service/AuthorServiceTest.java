@@ -1,4 +1,4 @@
-package com.stadtbucheri.test;
+package com.stadtbucheri.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -7,14 +7,15 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.Collection;
 import java.util.Optional;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import com.stadtbucheri.DateUtils;
 import com.stadtbucheri.entity.AuthorEntity;
-import com.stadtbucheri.service.AuthorService;
+import com.stadtbucheri.repository.AuthorRepository;
+import com.stadtbucheri.utils.DateUtils;
 
 @SpringBootTest
 @ActiveProfiles("h2")
@@ -22,6 +23,14 @@ class AuthorServiceTest {
 
 	@Autowired
 	AuthorService authorService;
+
+	@Autowired
+	AuthorRepository authorRepository;
+
+	@BeforeEach
+	void cleanDatabase() {
+		authorRepository.deleteAll();
+	}
 
 	@Test
 	void testAuthorService() {

@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,8 +16,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "loan", uniqueConstraints = @UniqueConstraint(columnNames = { "title", "genre", "price" }))
-
+@Table
 public class LoanEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

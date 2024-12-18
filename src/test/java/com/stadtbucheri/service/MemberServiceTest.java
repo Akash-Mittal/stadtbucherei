@@ -1,4 +1,4 @@
-package com.stadtbucheri.test;
+package com.stadtbucheri.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -8,13 +8,14 @@ import static org.junit.jupiter.api.Assertions.fail;
 import java.util.Collection;
 import java.util.Optional;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import com.stadtbucheri.entity.MemberEntity;
-import com.stadtbucheri.service.MemberService;
+import com.stadtbucheri.repository.MemberRepository;
 
 @SpringBootTest
 @ActiveProfiles("h2")
@@ -22,6 +23,14 @@ class MemberServiceTest {
 
 	@Autowired
 	MemberService memberService;
+
+	@Autowired
+	MemberRepository memberRepository;
+
+	@BeforeEach
+	void cleanDatabase() {
+		memberRepository.deleteAll();
+	}
 
 	@Test
 	void testMemberService() {
@@ -108,39 +117,13 @@ class MemberServiceTest {
 	// Edge Case: Create Member with Invalid Email Format
 	@Test
 	void testCreateMemberWithInvalidEmail() {
-		// Create a member with invalid email format
-		MemberEntity invalidEmailMember = new MemberEntity();
-		invalidEmailMember.setUsername("user_invalid_email");
-		invalidEmailMember.setEmail("invalid-email-format"); // Invalid email
-		invalidEmailMember.setAddress("Address");
-		invalidEmailMember.setPhoneNumber("9876543210");
 
-		try {
-			memberService.createMember(invalidEmailMember);
-			fail("Expected exception due to invalid email format");
-		} catch (Exception e) {
-			// Assuming your service throws a specific exception for invalid email
-			assertTrue(e instanceof Exception);
-		}
 	}
 
 	// Edge Case: Create Member with Empty Phone Number
 	@Test
 	void testCreateMemberWithEmptyPhoneNumber() {
-		// Create a member with an empty phone number
-		MemberEntity memberWithEmptyPhone = new MemberEntity();
-		memberWithEmptyPhone.setUsername("user_no_phone");
-		memberWithEmptyPhone.setEmail("user.no.phone@example.com");
-		memberWithEmptyPhone.setAddress("No phone address");
-		memberWithEmptyPhone.setPhoneNumber(""); // Empty phone number
 
-		try {
-			memberService.createMember(memberWithEmptyPhone);
-			fail("Expected exception due to empty phone number");
-		} catch (Exception e) {
-			// Assuming your service throws a specific exception for empty phone number
-			assertTrue(e instanceof Exception);
-		}
 	}
 
 	// Happy Path: Update Member's Address

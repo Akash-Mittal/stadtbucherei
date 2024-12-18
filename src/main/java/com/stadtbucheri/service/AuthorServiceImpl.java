@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.stadtbucheri.DateUtils;
 import com.stadtbucheri.entity.AuthorEntity;
 import com.stadtbucheri.repository.AuthorRepository;
+import com.stadtbucheri.utils.DateUtils;
 
 @Service
 @Transactional(readOnly = true)
