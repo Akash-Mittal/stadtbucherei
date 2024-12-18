@@ -1,5 +1,7 @@
 package com.stadtbucheri.entity;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,23 +17,23 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "book", uniqueConstraints = @UniqueConstraint(columnNames = { "title", "genre", "price" }))
+@Table(name = "loan", uniqueConstraints = @UniqueConstraint(columnNames = { "title", "genre", "price" }))
 
-public class BookEntity {
-
+public class LoanEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private String title;
-
-	private String genre;
-
-	private double price;
+	@ManyToOne
+	@JoinColumn(name = "member_id", nullable = false)
+	private MemberEntity member;
 
 	@ManyToOne
-	@JoinColumn(name = "author_id", nullable = false)
-	private AuthorEntity author;
+	@JoinColumn(name = "book_id", nullable = false)
+	private BookEntity book;
 
-	// Getters and setters omitted for brevity
+	private LocalDate lendDate;
+
+	private LocalDate returnDate;
+
 }

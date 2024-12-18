@@ -3,23 +3,10 @@ server:
   shutdown: graceful
 
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/postgres?user=sa&password=
-    platform: postgres
-    initialization-mode: always
-    #schema: classpath:script/sql/schema.sql
-    data: classpath:script/sql/data.sql
-  jpa:
-    database: POSTGRESQL
-    show-sql: true
-    generate-ddl: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: create
   lifecycle:
     timeout-per-shutdown-phase: 20s
+  profiles:
+    active: h2
 
 logging:
   level:

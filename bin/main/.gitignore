@@ -1,3 +1,5 @@
 /application.yml
 /com/
 /script/
+/application-h2.yml
+/application-postgres.yml
