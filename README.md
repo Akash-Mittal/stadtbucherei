@@ -28,19 +28,18 @@ For more details on the assignment, check the [Assignment Document](doc/assignme
 
 ### Without Docker
 To run the application without Docker, simply set up the necessary dependencies, and you can access the Swagger UI for the API at:
-
+./gradlew build
 ./gradlew bootRun -Dspring.profiles.active=h2
 Access on 
   http://localhost:9091/swagger-ui/index.html#/
 
 ### With Springboot and Postgress Docker DB
+./gradlew build
 ./gradlew bootRun -Dspring.profiles.active=postgres 
 (make sure postgres is up, you can do that by starting a docker instance with)
-
 docker-compose --profile db up -d
-
 Access on 
-  http://localhost:9091/swagger-ui/index.html#/
+http://localhost:9091/swagger-ui/index.html#/
 
 ---
 
@@ -52,6 +51,7 @@ To run the application locally using Docker Compose, follow these steps:
 #### Steps to Start:
 * git clone https://github.com/Akash-Mittal/stadtbucherei
 * cd stadtbucherei
+* ./gradlew build
 * docker-compose --profile full up -d
 * http://localhost:9091/swagger-ui/index.html#/
    
@@ -67,6 +67,8 @@ To run the application locally using Docker Compose, follow these steps:
 * Code quality is done via sonarqube on the cloud - please click the banner to see the open issues.
 * The code is also built via github actions (there is further scope to deploy the whole docker, its not delivered)
 * The documentation has more focus on code as documentations with Swagger api documentation.
+* no env file created, and many properties are not externalized.
+* No cascading in related entities 
 
 
  
