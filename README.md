@@ -7,7 +7,7 @@
 
 ## Java Web Application with PostgreSQL, Docker, OpenAPI, and Codefresh
 
-For more details on the assignment, check the [Assignment Document](docs/assignment.md).
+For more details on the assignment, check the [Assignment Document](doc/assignment.md).
 
 ---
 
@@ -50,12 +50,10 @@ To run the application locally using Docker Compose, follow these steps:
 
 
 #### Steps to Start:
-1. Clone the repository to your local machine:
-  
-   git clone https://github.com/Akash-Mittal/stadtbucherei
-   cd stadtbucherei
-   docker-compose --profile full up -d
-   http://localhost:9091/swagger-ui/index.html#/
+* git clone https://github.com/Akash-Mittal/stadtbucherei
+* cd stadtbucherei
+* docker-compose --profile full up -d
+* http://localhost:9091/swagger-ui/index.html#/
    
 ### Assumptions
 * Due to time constraints - no separate DB scripts are provided.
