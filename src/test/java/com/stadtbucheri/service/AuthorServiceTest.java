@@ -15,6 +15,9 @@ import org.springframework.test.context.ActiveProfiles;
 
 import com.stadtbucheri.entity.AuthorEntity;
 import com.stadtbucheri.repository.AuthorRepository;
+import com.stadtbucheri.repository.BookRepository;
+import com.stadtbucheri.repository.LoanRepository;
+import com.stadtbucheri.repository.MemberRepository;
 import com.stadtbucheri.utils.DateUtils;
 
 @SpringBootTest
@@ -25,10 +28,22 @@ class AuthorServiceTest {
 	AuthorService authorService;
 
 	@Autowired
+	LoanRepository loanRepository;
+
+	@Autowired
+	MemberRepository memberRepository;
+
+	@Autowired
+	BookRepository bookRepository;
+
+	@Autowired
 	AuthorRepository authorRepository;
 
 	@BeforeEach
 	void cleanDatabase() {
+		loanRepository.deleteAll();
+		memberRepository.deleteAll();
+		bookRepository.deleteAll();
 		authorRepository.deleteAll();
 	}
 

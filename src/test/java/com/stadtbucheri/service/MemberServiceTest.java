@@ -15,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import com.stadtbucheri.entity.MemberEntity;
+import com.stadtbucheri.repository.LoanRepository;
 import com.stadtbucheri.repository.MemberRepository;
 
 @SpringBootTest
@@ -27,14 +28,19 @@ class MemberServiceTest {
 	@Autowired
 	MemberRepository memberRepository;
 
+	@Autowired
+
+	LoanRepository loanRepository;
+
 	@BeforeEach
 	void cleanDatabase() {
-		memberRepository.deleteAll();
+		// memberRepository.deleteAll();
 	}
 
 	@Test
 	void testMemberService() {
-		// Verify the service starts with no members
+		loanRepository.deleteAll();
+		memberRepository.deleteAll(); // Verify the service starts with no members
 		assertEquals(0, memberService.getAllMembers().size());
 
 		// Create a member
@@ -73,6 +79,11 @@ class MemberServiceTest {
 
 	@Test
 	void testCreateAndRetrieveMember() {
+		loanRepository.deleteAll();
+		memberRepository.deleteAll();
+		// Verify the service starts with no members
+		assertEquals(0, memberService.getAllMembers().size());
+
 		// Create a new member
 		MemberEntity newMember = new MemberEntity();
 		newMember.setUsername("jane_doe");
@@ -175,6 +186,9 @@ class MemberServiceTest {
 	// Happy Path: Delete Member
 	@Test
 	void testDeleteMember() {
+		loanRepository.deleteAll();
+		memberRepository.deleteAll();
+
 		// Create a new member
 		MemberEntity newMember = new MemberEntity();
 		newMember.setUsername("delete_user");
@@ -198,7 +212,6 @@ class MemberServiceTest {
 			memberService.deleteMember(999L); // Non-existent ID
 			fail("Expected exception for non-existent member deletion");
 		} catch (Exception e) {
-			// Assuming your service throws an exception for deleting a non-existent member
 			assertTrue(e instanceof Exception);
 		}
 	}

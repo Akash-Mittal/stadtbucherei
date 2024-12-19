@@ -12,10 +12,11 @@ import com.stadtbucheri.entity.LoanEntity;
 @Repository
 public interface LoanRepository extends JpaRepository<LoanEntity, Long> {
 
-	// Custom queries can be added as needed
 	List<LoanEntity> findByMemberId(Long memberId);
 
 	Optional<LoanEntity> findByMemberIdAndBookId(Long memberId, Long bookId);
+
+	List<LoanEntity> findByMemberIdAndReturnDateIsNull(Long memberId);
 
 	List<LoanEntity> findByLendDateAfter(LocalDate date);
 }
