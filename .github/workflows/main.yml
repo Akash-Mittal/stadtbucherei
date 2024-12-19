@@ -17,8 +17,11 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '17' # Specify your JDK version
+        java-version: '17'
         distribution: 'temurin'
+
+    - name: Grant execute permission for Gradle Wrapper
+      run: chmod +x ./gradlew
 
     - name: Build with Gradle
       run: ./gradlew build
