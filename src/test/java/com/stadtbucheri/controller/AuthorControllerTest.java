@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -31,7 +31,7 @@ import org.testcontainers.lifecycle.Startables;
 import com.stadtbucheri.dto.AuthorData;
 import com.stadtbucheri.dto.CreateAuthorRequest;
 
-@Ignore
+@Disabled("Controller tests are temporarily disabled as its impacting system performance due to dependency on docker engine")
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
