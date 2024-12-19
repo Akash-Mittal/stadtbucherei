@@ -2,15 +2,37 @@ plugins {
     id 'org.springframework.boot' version '2.7.5'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
     id 'java'
+    id 'jacoco'
+    id 'org.sonarqube' version '3.3'
 }
 
 group = 'com.stadtbucheri'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = JavaVersion.VERSION_17
 
+sonarqube {
+    properties {
+        property 'sonar.host.url', 'http://localhost:9000'
+    }
+}
+
+tasks.named('sonarqube').configure {
+    dependsOn test
+}
+
 repositories {
     mavenCentral()
 }
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = true
+        csv.required = false
+    }
+}
+
+test.finalizedBy jacocoTestReport
 
 dependencies {
 

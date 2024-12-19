@@ -1,4 +1,5 @@
 # stadtbucherei
+[![Build and Test](https://github.com/Akash-Mittal/stadtbucherei/actions/workflows/main.yml/badge.svg)](https://github.com/Akash-Mittal/stadtbucherei/actions/workflows/main.yml)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Akash-Mittal_stadtbucherei&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Akash-Mittal_stadtbucherei)
 
