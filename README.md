@@ -1,11 +1,5 @@
 # stadtbucherei
-[![Build and Test](https://github.com/Akash-Mittal/stadtbucherei/actions/workflows/main.yml/badge.svg)](https://github.com/Akash-Mittal/stadtbucherei/actions/workflows/main.yml)
-
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Akash-Mittal_stadtbucherei&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Akash-Mittal_stadtbucherei)
-
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Akash-Mittal_stadtbucherei)](https://sonarcloud.io/summary/new_code?id=Akash-Mittal_stadtbucherei)
-
-[![SonarQube Cloud](https://sonarcloud.io/images/project_badges/sonarcloud-light.svg)](https://sonarcloud.io/summary/new_code?id=Akash-Mittal_stadtbucherei)
+[![Build and Test](https://github.com/Akash-Mittal/stadtbucherei/actions/workflows/main.yml/badge.svg)](https://github.com/Akash-Mittal/stadtbucherei/actions/workflows/main.yml) [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Akash-Mittal_stadtbucherei&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Akash-Mittal_stadtbucherei) [![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Akash-Mittal_stadtbucherei)](https://sonarcloud.io/summary/new_code?id=Akash-Mittal_stadtbucherei)
 
 <img src="doc/stadtbucherei.png" alt="stadtbucherei" width="600" />
 
